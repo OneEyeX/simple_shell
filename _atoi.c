@@ -4,7 +4,7 @@
  * interactive - returns true if shell is interactive mode
  * @info: struct address
  *
- * Return: 1 if interactive mode, 0 otherwise
+ * Return: if interactive mode returns 1, else returns 0
  */
 int interactive(info_t *info)
 {
@@ -15,7 +15,7 @@ int interactive(info_t *info)
  * is_delim - checks if character is a delimeter
  * @car: the char to check
  * @delimeter: the delimeter string
- * Return: 1 if true, 0 if false
+ * Return: if true returns 1, else returns 0
  */
 int is_delim(char car, char *delimeter)
 {
@@ -26,9 +26,9 @@ int is_delim(char car, char *delimeter)
 }
 
 /**
- * _isalpha - checks for alphabetic character
+ * _isalpha - checks if character is alphabetic
  * @car: The character to input
- * Return: 1 if car is alphabetic, 0 otherwise
+ * Return: if car is alphabetic returns 1, else returns 0
  */
 
 int _isalpha(int car)
@@ -42,7 +42,7 @@ int _isalpha(int car)
 /**
  * _atoi - converts a string to an integer
  * @str: the string to be converted
- * Return: 0 if no numbers in string, converted number otherwise
+ * Return: if no numbers in string returns 0, else returns the converted number
  */
 
 int _atoi(char *str)
