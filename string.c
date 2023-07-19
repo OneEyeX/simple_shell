@@ -23,7 +23,7 @@ int _strlen(char *str)
  * @str1: the first string
  * @str2: the second string
  *
- * Return: if str1 < str2 returns negative, else if str1 > str2 returns positive, else if str1 == str2 returns zero
+ * Return: negative if str1 < str2, positive if str1 > str2, zero if str1 == str2
  */
 int _strcmp(char *str1, char *str2)
 {

@@ -3,21 +3,21 @@
 /**
  * **strtow - splits a string into words. Repeat delimiters are ignored
  * @str: the input string
- * @delimeter: the delimeter string
+ * @delim: the delimeter string
  * Return: a pointer to an array of strings, or NULL on failure
  */
 
-char **strtow(char *str, char *delimeter)
+char **strtow(char *str, char *delim)
 {
 	int i, j, k, m, numwords = 0;
 	char **s;
 
 	if (str == NULL || str[0] == 0)
 		return (NULL);
-	if (!delimeter)
-		delimeter = " ";
+	if (!delim)
+		delim = " ";
 	for (i = 0; str[i] != '\0'; i++)
-		if (!is_delim(str[i], delimeter) && (is_delim(str[i + 1], delimeter) || !str[i + 1]))
+		if (!is_delim(str[i], delim) && (is_delim(str[i + 1], delim) || !str[i + 1]))
 			numwords++;
 
 	if (numwords == 0)
@@ -27,10 +27,10 @@ char **strtow(char *str, char *delimeter)
 		return (NULL);
 	for (i = 0, j = 0; j < numwords; j++)
 	{
-		while (is_delim(str[i], delimeter))
+		while (is_delim(str[i], delim))
 			i++;
 		k = 0;
-		while (!is_delim(str[i + k], delimeter) && str[i + k])
+		while (!is_delim(str[i + k], delim) && str[i + k])
 			k++;
 		s[j] = malloc((k + 1) * sizeof(char));
 		if (!s[j])
@@ -51,10 +51,10 @@ char **strtow(char *str, char *delimeter)
 /**
  * **strtow2 - splits a string into words
  * @str: the input string
- * @delimeter: the delimeter
+ * @delim: the delimeter
  * Return: a pointer to an array of strings, or NULL on failure
  */
-char **strtow2(char *str, char delimeter)
+char **strtow2(char *str, char delim)
 {
 	int i, j, k, m, numwords = 0;
 	char **s;
@@ -62,8 +62,8 @@ char **strtow2(char *str, char delimeter)
 	if (str == NULL || str[0] == 0)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
-		if ((str[i] != delimeter && str[i + 1] == delimeter) ||
-				    (str[i] != delimeter && !str[i + 1]) || str[i + 1] == delimeter)
+		if ((str[i] != delim && str[i + 1] == delim) ||
+				    (str[i] != delim && !str[i + 1]) || str[i + 1] == delim)
 			numwords++;
 	if (numwords == 0)
 		return (NULL);
@@ -72,10 +72,10 @@ char **strtow2(char *str, char delimeter)
 		return (NULL);
 	for (i = 0, j = 0; j < numwords; j++)
 	{
-		while (str[i] == delimeter && str[i] != delimeter)
+		while (str[i] == delim && str[i] != delim)
 			i++;
 		k = 0;
-		while (str[i + k] != delimeter && str[i + k] && str[i + k] != delimeter)
+		while (str[i + k] != delim && str[i + k] && str[i + k] != delim)
 			k++;
 		s[j] = malloc((k + 1) * sizeof(char));
 		if (!s[j])
