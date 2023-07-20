@@ -1,6 +1,6 @@
 # 0x16. C - Simple Shell
  **By Spencer Cheng, featuring Julien Barbier**
-Project to be done in teams of 2 people (Team: Chedly CHAHED)
+Project to be done by <b>Chedly CHAHED</b>
 
 # Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
